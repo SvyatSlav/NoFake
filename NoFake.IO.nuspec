@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+    <metadata>
+        <id>NoFake</id>
+        <version>0.0.6-aplha</version>
+        <title>NoFake</title>
+        <authors>SvyatSlav</authors>
+        <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
+        <projectUrl>https://nofake.codeplex.com</projectUrl>
+        <iconUrl>https://nuget.org/Content/Images/packageDefaultIcon-50x50.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>NoFake is a Unit-Test helper library that provides an opportunity to create a real test environment.
+      It creates real objects in a current testing scope instead of simulating them as mocks\stubs libraries do.
+      For example, if test method requires some folder to have a list of specific files NoFake will handle it: files will be created at the beginning of test method and removed in the end, when all stuff is done.</description>
+        <summary>.NET Unit-Test helper library</summary>
+        <releaseNotes />
+        <copyright>Copyright  2014</copyright>
+        <language>en-US</language>
+        <tags>test testing helper unitTest tdd</tags>
+    </metadata>
+    <files>
+        <file src="..\src\NoFake.IO\bin\Debug\NoFake.IO.dll" target="lib\net40\NoFake.IO.dll" />
+        <file src="..\src\NoFake.IO\bin\Debug\NoFake.IO.xml" target="lib\net40\NoFake.IO.XML" />
+    </files>
+</package>

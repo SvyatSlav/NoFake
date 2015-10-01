@@ -35,18 +35,20 @@ namespace NoFake.IO
         /// Adds the specified parent directory.
         /// </summary>
         /// <param name="parentDirectory">The parent directory.</param>
-        /// <param name="folderName">The folder name, only one-level path</param>
+        /// <param name="directoryName">The folder name, only one-level path</param>
         /// <returns></returns>
         /// <exception cref="System.Exception">@FolderName contains invalid directory separator char, example '\'</exception>
-        public static NDirectory Add(NDirectory parentDirectory, string folderName)
+        public static NDirectory Add(NDirectory parentDirectory, string directoryName)
         {
             Contract.Requires<ArgumentNullException>(parentDirectory != null);
-            Contract.Requires<ArgumentNullException>(folderName != null);
+            Contract.Requires<ArgumentNullException>(directoryName != null);
 
+            //TODO Добавить поддержку сложных структур
 
-            Helper.CheckForSeparatorChar(folderName);
+            Helper.CheckForSeparatorChar(directoryName);
 
-            var dir = new NDirectory(parentDirectory, folderName);
+            var dir = new NDirectory(parentDirectory, directoryName);
+           
             parentDirectory.AddChild(dir);
             return dir;
         }

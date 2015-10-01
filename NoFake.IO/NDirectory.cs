@@ -20,6 +20,8 @@ namespace NoFake.IO
         /// </summary>
         public string FullPath { get; private set; }
 
+        public NDirectory Parent { get; private set; }
+
         /// <summary>
         /// Occurs when directory is delete.
         /// </summary>
@@ -42,6 +44,8 @@ namespace NoFake.IO
 
         internal NDirectory()
         {
+            //TODO в фабрику
+
             //Get disk letter from executing path
             var diskLetter = Helper.GetExecutingDiskLetter();
 
@@ -60,6 +64,7 @@ namespace NoFake.IO
             Contract.Requires<ArgumentNullException>(parentDirectory != null);
             Contract.Requires<ArgumentNullException>(folderName != null);
 
+            Parent = parentDirectory;
             FullPath = Path.Combine(parentDirectory.FullPath, folderName);
 
             CreateDirectory(FullPath);
@@ -142,5 +147,16 @@ namespace NoFake.IO
             Contract.Requires(file != null);
             _folderChildren.Add(file);
         }
+
+        public static NDirectory New()
+        {
+            return DirectoryFactory.New();
+        }
+
+        public static NDirectory New(string folderName)
+        {
+            return DirectoryFactory.New(folderName);
+        }
+
     }
 }

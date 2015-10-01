@@ -53,5 +53,65 @@ namespace NoFake.IO.Extensions
 
             return FileFactory.Add(parent, fileName, content) as TReturn;
         }
+
+        #region Fluent
+
+        public static NDirectory Add(this NDirectory current, string directoryName)
+        {
+            if (current == null)
+            {
+                return null;
+            }
+
+            var newDir = DirectoryFactory.Add(current, directoryName);
+
+            return current;
+        }
+
+        //TODO Method name?
+        public static NDirectory AddAndIn(this NDirectory current, string directoryName)
+        {
+            if (current == null)
+            {
+                return null;
+            }
+
+
+            return DirectoryFactory.Add(current, directoryName);
+
+        }
+
+        public static NDirectory Up(this NDirectory current)
+        {
+            if (current == null)
+            {
+                return null;
+            }
+
+            var parent = current.Parent;
+
+            if (parent == null)
+            {
+                return current;
+            }
+
+            return parent;
+
+        }
+
+        public static NDirectory New(string folderName)
+        {
+            return DirectoryFactory.New(folderName);
+        }
+
+        //TODO Add(NFile)
+
+        //TODO Add(NFile [])
+
+        //TODO Add(string[] folders)
+
+        //TODO Add("1/1/1")
+
+        #endregion
     }
 }

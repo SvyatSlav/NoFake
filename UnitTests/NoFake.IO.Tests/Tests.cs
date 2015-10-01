@@ -133,6 +133,7 @@ namespace NoFake.IO.Tests
             }
         }
 
+        [Test]
         public void TestAddFolder2Folder()
         {
             var folderName = @"folderChild";
@@ -151,7 +152,25 @@ namespace NoFake.IO.Tests
             }
         }
 
+        [Test]
+        public void Fluent_CreateSimpleStructure()
+        {
+            using (var root = NDirectory.New())
+            {
+                root.Add("1").Add("2").Add("3");
+
+                Assert.That(Directory.Exists(Path.Combine(root.FullPath,"1")));
+                Assert.That(Directory.Exists(Path.Combine(root.FullPath, "2")));
+                Assert.That(Directory.Exists(Path.Combine(root.FullPath, "3")));
+            }
+        }
+
+
         #endregion
+
+
+
+
 
         #region File
 

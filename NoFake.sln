@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoFake.IO", "NoFake.IO\NoFake.IO.csproj", "{A470A223-409F-4A8F-85AA-13A06E187E2C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{388835EF-F690-438C-B368-5AAE0F6AE5C3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{388835EF-F690-438C-B368-5AAE0F6AE5C3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoFake.IO.Tests", "UnitTests\NoFake.IO.Tests\NoFake.IO.Tests.csproj", "{DF4766FB-9B41-48B0-9B05-47E9AC90F731}"
 EndProject

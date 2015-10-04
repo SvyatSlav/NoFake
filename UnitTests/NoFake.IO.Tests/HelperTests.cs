@@ -9,6 +9,7 @@ namespace NoFake.IO.Tests
         [Test]
         public void ExecutingDiskLetter_RightLetter()
         {
+            //TODO User temp directory
             var path = Helper.GetExecutingDiskLetter();
             Assert.That(path, Is.EqualTo(@"C:\"));
             Assert.IsNotEmpty(path);
